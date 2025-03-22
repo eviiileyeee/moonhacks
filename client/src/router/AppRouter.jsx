@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import DashboardLayout from '../components/layout/DashboardLayout';
 import ProtectedRoute from './ProtectedRoute';
 import Loader from '../components/ui/Loader';
+import Dashboard from '../pages/nav/Dashboard';
 
 // Lazy Load Pages
 const Hero = lazy(() => import('../pages/Hero'));
@@ -44,7 +45,7 @@ const AppRouter = () => {
           <Route path="/search/:username" element={<SearchedUserPage />} />
           <Route path="/services" element={<DashboardLayout><ServicesPage /></DashboardLayout>} />
           <Route path="/clubs" element={<DashboardLayout><ClubsPage /></DashboardLayout>} />
-
+          <Route path="/dashboard" element={<DashboardLayout><Dashboard /></DashboardLayout>} />
 
           {/* 404 route */}
           <Route path="*" element={<DashboardLayout><div className="flex items-center justify-center min-h-screen"><PageNotFound /></div></DashboardLayout>} />

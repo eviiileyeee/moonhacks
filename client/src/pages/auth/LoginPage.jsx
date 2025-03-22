@@ -65,7 +65,7 @@ const LoginPage = () => {
                     >
         <div className="text-center">
           <h2 className="mt-6 text-4xl font-bold text-gray-900 dark:text-white">
-            Welcome to Eventflow
+            Welcome to TechnoClubs
           </h2>
           <p className="mt-2 text-lg text-gray-600 dark:text-gray-400">
             You create the event, we perfect the flow

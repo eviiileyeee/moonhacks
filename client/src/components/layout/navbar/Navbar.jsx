@@ -11,7 +11,7 @@ const Navbar = () => {
   const { darkMode, toggleDarkMode } = useTheme();
   const location = useLocation();
   const navigate = useNavigate();
-
+  console.log(user)
   useEffect(() => {
     const path = location.pathname;
     setActiveTab(path === "/" ? "home" : path.substring(1));
@@ -27,6 +27,7 @@ const Navbar = () => {
     { name: "Events", path: "/events", icon: Calendar },
     { name: "Contact", path: "/contact", icon: Phone },
     { name: "Services", path: "/services", icon: Briefcase },
+    { name: "Clubs", path: "/clubs", icon: Briefcase },
   ];
 
   return (
@@ -72,7 +73,7 @@ const Navbar = () => {
             </button>
             {user ? (
               <>
-                {activeTab === "events" ? (
+                {activeTab === "events" && user.role === "admin" ? (
                   <button
                     className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700"
                     onClick={() => navigate("/create")}

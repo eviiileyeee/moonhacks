@@ -19,7 +19,7 @@ const SearchUserPage = lazy(() => import('../pages/contactPages/SearchUserPage')
 const SearchedUserPage = lazy(() => import('../pages/contactPages/SearchedUserPage'));
 const ServicesPage = lazy(() => import('../pages/nav/ServicesPage'));
 const PageNotFound = lazy(() => import('../components/subComponents/PageNoteFound'));
-
+const ClubsPage = lazy(() => import('../pages/nav/ClubsPage'));
 const AppRouter = () => {
   return (
     <BrowserRouter>
@@ -43,6 +43,8 @@ const AppRouter = () => {
           <Route path="/search" element={<DashboardLayout><SearchUserPage /></DashboardLayout>} />
           <Route path="/search/:username" element={<SearchedUserPage />} />
           <Route path="/services" element={<DashboardLayout><ServicesPage /></DashboardLayout>} />
+          <Route path="/clubs" element={<DashboardLayout><ClubsPage /></DashboardLayout>} />
+
 
           {/* 404 route */}
           <Route path="*" element={<DashboardLayout><div className="flex items-center justify-center min-h-screen"><PageNotFound /></div></DashboardLayout>} />

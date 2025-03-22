@@ -6,14 +6,14 @@ import { useTheme } from "../context/ThemeContext/ThemeContext.jsx";
 import Button from "../components/ui/Button.jsx";
 import AddEventCard from "../components/ui/AddEventCard.jsx";
 import About from "../components/layout/footer/footerLinks/About.jsx";
-
+import { useAuth } from "../context/AuthContext.jsx";
 const Hero = () => {
   const navigate = useNavigate();
   const { darkMode } = useTheme();
   const [isLoading, setIsLoading] = useState(true);
   // Add a state for screen size
   const [windowWidth, setWindowWidth] = useState(0);
-
+  const { user } = useAuth();
   const handleClick = () => {
     navigate("/events");
   };
@@ -61,6 +61,7 @@ const Hero = () => {
       }
     }
   });
+
   
   function formatDate(dateString) {
     const date = new Date(dateString);
@@ -185,7 +186,10 @@ const Hero = () => {
           </div>
         </section>
         <About/>
-       <AddEventCard/>
+
+        {user?.role === "admin" && <AddEventCard />}
+
+
         
       <Goals />
     </>

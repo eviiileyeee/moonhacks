@@ -77,7 +77,7 @@ const About = () => {
           >
             <div className="w-full h-0 pb-[75%] relative rounded-lg overflow-hidden shadow-2xl">
               <img 
-                src="/images/Virtual_events.png" 
+                src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                 alt="Virtual event with participants" 
                 className="absolute inset-0 w-full h-full object-cover"
               />
